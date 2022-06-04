@@ -1,4 +1,4 @@
-package tk.miflotita.app;
+package tk.miflotita.app.model;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,9 +17,14 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Entity
 @Table(name = "usuarios", uniqueConstraints = { @UniqueConstraint(columnNames = "username"), @UniqueConstraint(columnNames = "email") })
+@Data
+@NoArgsConstructor
 public class Usuario {
 	
 	public Usuario(String username, String email, String password) {
